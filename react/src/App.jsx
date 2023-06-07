@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className='App'>
-      App TTS TYTY
+      App All
     </div>
   )
 }
