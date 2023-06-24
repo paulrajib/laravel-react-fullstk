@@ -27,17 +27,24 @@
 In root directory 
 
 create .env file and put these lines bellow
+
+```
 DB_CONNECTION=sqlite
 DB_DATABASE=/var/www/html/laravel/laravel-react-fullstk/database/database.sqlite
+
+```
 // this dir name should be correct
+
+------------------------------
 
 ```
 composer install
-php artisan config:cache
+sudo apt install php-sqlite3 // for sqlite driver
 php artisan key:generate
 php artisan migrate
 php artisan db:seed // If there is any seeds
 chmod 777 -R  storage // If necessary
+php artisan config:cache
 php artisan serve --host 192.168.31.51 // Say 192.168.31.51 is the_local_ip of my device
 
 ```
