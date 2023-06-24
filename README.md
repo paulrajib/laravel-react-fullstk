@@ -62,7 +62,9 @@ External: http://192.168.31.51:3000
 which will be live auto-reloadable.
 
 If not, then put your local_ip(192.168.31.51 in my case) in webpack.mix.js
-------------------------------
+
+
+---------------------------------------
 
 In react dir
 ```
