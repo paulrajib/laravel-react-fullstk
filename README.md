@@ -1,12 +1,12 @@
 <p align="center">
     <a href="" style="width: 120px; max-width: 250px;" >
-        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" max-width="250" width="400" style="max-width: 250px%;">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" max-width="250" width="200" style="max-width: 250px;">
     </a>
     <a href="" style="width: 120px; max-width: 250px;" >
-        <img src="https://adherence.dev/assets/images/logo.png" max-width="250" width="120" alt="React Icons">
+        <img src="https://adherence.dev/assets/images/logo.png" max-width="250" width="150" alt="React Icons">
     </a>
     <a href="" style="width: 120px; max-width: 250px;" >
-        <img src="https://rawgit.com/gorangajic/react-icons/master/react-icons.svg" max-width="250" width="120" alt="React Icons">
+        <img src="https://rawgit.com/gorangajic/react-icons/master/react-icons.svg" max-width="250" width="150" alt="React Icons">
     </a>
 </p>
 
