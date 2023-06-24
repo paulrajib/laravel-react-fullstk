@@ -1,6 +1,6 @@
 <p align="center">
-    <a href="" style="width: 120px; max-width: 250px;" >
-        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" max-width="300" width="300" height="250" style="max-width: 250px;">
+    <a href="" style="width: 120px; max-width: 250px;" class="svg-pan-zoom_viewport">
+        <img src="https://adherence.dev/assets/images/other-logos/laravel-logo.svg" max-width="300" width="300" height="170" style="max-width: 250px;">
     </a>
     <a href="" style="width: 120px; max-width: 250px;" >
         <img src="https://adherence.dev/assets/images/logo.png" max-width="250" width="150" alt="React Icons">
