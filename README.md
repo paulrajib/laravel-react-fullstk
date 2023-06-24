@@ -5,6 +5,9 @@
     <a href="">
         <img src="https://rawgit.com/gorangajic/react-icons/master/react-icons.svg" width="120" alt="React Icons">
     </a>
+    <a href="">
+        <img src="https://adherence.dev/assets/images/logo.png" width="120" alt="React Icons">
+    </a>
 </p>
 
 <p align="center">
@@ -59,6 +62,7 @@ External: http://192.168.31.51:3000
 which will be live auto-reloadable.
 
 If not, then put your local_ip(192.168.31.51 in my case) in webpack.mix.js
+------------------------------
 
 In react dir
 ```
