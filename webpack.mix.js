@@ -17,4 +17,4 @@ mix.js('resources/js/app.js', 'public/js')
     ]);
 
 
-mix.browserSync('192.168.31.51:8000');
+mix.browserSync('192.168.31.31:8000');

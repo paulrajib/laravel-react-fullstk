@@ -25,19 +25,33 @@
 ## Install and run
 
 In root directory 
+
+create .env file and put these lines bellow
+DB_CONNECTION=sqlite
+DB_DATABASE=/var/www/html/laravel/laravel-react-fullstk/database/database.sqlite
+// this dir name should be correct
+
 ```
 composer install
+php artisan config:cache
+php artisan key:generate
+php artisan migrate
+php artisan db:seed // If there is any seeds
+chmod 777 -R  storage // If necessary
 php artisan serve --host 192.168.31.51 // Say 192.168.31.51 is the_local_ip of my device
+
 ```
 It will provide http://192.168.31.51:8000/, which will not live auto-reloadable.
 Then
 ```
 npm run watch
 ```
-Tt will provide 
+It will provide 
 Local: http://localhost:3000
 External: http://192.168.31.51:3000
 which will be live auto-reloadable.
+
+If not, then put your local_ip(192.168.31.51 in my case) in webpack.mix.js
 
 In react dir
 ```
