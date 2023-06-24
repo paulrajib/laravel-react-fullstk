@@ -1,6 +1,6 @@
 <p align="center">
     <a href="" style="width: 120px; max-width: 250px;" >
-        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" max-width="250" width="400">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" max-width="250" width="400" style="max-width: 250px%;">
     </a>
     <a href="" style="width: 120px; max-width: 250px;" >
         <img src="https://adherence.dev/assets/images/logo.png" max-width="250" width="120" alt="React Icons">
@@ -16,9 +16,6 @@
     </a>
     <a href="https://packagist.org/packages/laravel/framework">
         <img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads">
-    </a>
-    <a href="https://packagist.org/packages/laravel/framework">
-        <img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version">
     </a>
     <a href="https://packagist.org/packages/laravel/framework">
         <img src="https://img.shields.io/packagist/l/laravel/framework" alt="License">
