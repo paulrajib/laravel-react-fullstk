@@ -53,7 +53,7 @@ Then
 ```
 npm run watch
 ```
-// If you get any err like 'sh: 1: mix: not found'try
+// If you get any err like 'sh: 1: mix: not found' then try
 ```
 npm install laravel-mix@latest
 npm clean-install
