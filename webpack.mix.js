@@ -17,4 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
     ]);
 
 
-mix.browserSync('192.168.31.31:8000');
+    // put your local_ip(192.168.31.51 in my case) 
+mix.browserSync('192.168.31.51:8000');

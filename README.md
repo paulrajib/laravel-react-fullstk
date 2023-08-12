@@ -2,7 +2,7 @@
     <a href="" style="width: 120px; max-width: 250px;" class="svg-pan-zoom_viewport">
         <img src="https://adherence.dev/assets/images/other-logos/laravel-logo.svg" max-width="300" width="300" height="170" style="max-width: 250px;">
     </a>
-    <a href="" style="width: 120px; max-width: 250px;" >
+    <a href="https://adherence.dev" style="width: 120px; max-width: 250px;" >
         <img src="https://adherence.dev/assets/images/logo.png" max-width="250" width="150" alt="React Icons">
     </a>
     <a href="" style="width: 120px; max-width: 250px;" >
@@ -53,6 +53,17 @@ Then
 ```
 npm run watch
 ```
+// If you get any err like 'sh: 1: mix: not found'try
+```
+npm install laravel-mix@latest
+npm clean-install
+```
+
+Then run again
+```
+npm run watch
+```
+
 It will provide 
 Local: http://localhost:3000
 External: http://192.168.31.51:3000
