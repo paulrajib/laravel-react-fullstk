@@ -35,7 +35,7 @@ export default function Signup() {
         //const { name, value } = ev.target
         newData = value;
         if (newData.length < 7) {
-          passwordError = 'Password should be more than 8 characters'
+          passwordError = 'Password should be at least 7 characters'
         }
         if(!newData.match(lowerCaseLetters)) {  
           passwordError = 'Must include 1 lowercase'
@@ -43,10 +43,14 @@ export default function Signup() {
         if(!newData.match(upperCaseLetters)) {  
           passwordError = 'Must include 1 Uppercase'
         }
+        if(newData.length < 1){
+          setPassError("");          
+        } else{
+          setPassError(passwordError);          
+        }
       }
-      setPassError(passwordError);
 
-      
+
     }
 
 
@@ -65,7 +69,7 @@ export default function Signup() {
           <input type="text" placeholder='Full Name' />
           <input type="email" placeholder='Email Address' />
           <input type="password" name='password' id="password" onChange={handleChange} placeholder='Password' />
-          {pass_error}
+          <span className="show-clint-err">{pass_error}</span>
           <input type="password" placeholder='Password Confirmation' />
           <button type="submit" className="btn btn-block">Sign up</button>
           <p className="message">

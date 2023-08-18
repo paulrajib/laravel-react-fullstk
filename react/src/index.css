@@ -244,3 +244,11 @@ table > tbody > tr > td {
         transform: translateY(0);
     }
 }
+
+
+
+
+span.show-clint-err{
+    display: inline-block;
+    margin-bottom: 5px;
+}
