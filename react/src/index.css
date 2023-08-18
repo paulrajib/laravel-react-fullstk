@@ -252,3 +252,17 @@ span.show-clint-err{
     display: inline-block;
     margin-bottom: 5px;
 }
+
+.show-clint-err.yes-err{
+    background: orangered;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.show-clint-err.no-err{
+    background: lime;
+    color: black;
+    font-weight: 600;
+    padding: 10px;
+}
