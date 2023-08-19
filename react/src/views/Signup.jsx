@@ -12,6 +12,7 @@ export default function Signup() {
   // const [emailAlert, setEmailAlert] = useState(null);
   // const [passwordAlert, setPasswordAlert] = useState(null);
 
+  const [fullname_er, setFullNameEr] = useState("");
   const [pass, setPass] = useState("");
   const [pass_confrm, setPassConfrm] = useState("");
   const [pass_error, setPassError] = useState("");
@@ -32,17 +33,53 @@ export default function Signup() {
       var lowerCaseLetters = /[a-z]/g;
       var upperCaseLetters = /[A-Z]/g;
       var numbers = /[0-9]/g;
-      let rgxSpclChrtr = /^(?=.*[-\#\$\.\_\~\%\&\@\!\+\=\\*])/;
+      const rgxSpclChrtr = /^(?=.*[-\#\$\.\_\~\%\&\@\!\+\=\\*])/;
+      const rgxSpclChrtr_forname = /^(?=.*[-\#\$\_\~\%\/\&\@\!\+\=\\*])/;
+      const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
       // const newData = Object.assign({}, loginData, { [name]: value })
+
+      // let name_err = '';
+      // console.log(ev.target);
+      setEmailError("");
+      if(ev.target.id === 'fullname'){
+        // console.log(value.trim().split(/\s+/).length);
+        // console.log(value.length);
+        let name_err = '';
+        if(value.trim().split(/\s+/).length <= 1){
+          name_err = "Doesn't seams like a full name!";          
+        }
+        if(value.trim().split(/\s+/).length > 4 || value.length > 32){
+          name_err = "Is that a name or a sentence!?";          
+        }
+        if(value.match(rgxSpclChrtr_forname)) {  
+          name_err = "Can't contain special character";
+        }
+        if(value){
+          setFullNameEr(name_err);          
+        } else{
+          setFullNameEr('');
+        }
+      }
+
+      if(ev.target.id === 'email'){
+        // console.log('its email');
+        if(value && !value.match(regexEmail)){
+          //console.log('Email is valid');
+          setEmailError("Email is not valid");
+        }else{
+          setEmailError("");
+        }
+      }
 
       // Set warning/s for password validation
       let passwordError = ''
       if(ev.target.id === 'password'){
-        //const { name, value } = ev.target
+        // const { name, value } = ev.target
         // newData = value;
         setPass(value);
         if(pass_confrm === value){
           setPassConrmError('no-err');
+          if(pass_confrm === ""){setPassConrmError('');}
         } else{
           setPassConrmError('yes-err');
         }
@@ -63,7 +100,7 @@ export default function Signup() {
           passwordError = 'Must include 1 Uppercase';
         }
 
-        console.log(value + ' ' + value.length);
+        // console.log(value + ' ' + value.length);
         if(value){
           setPassError(passwordError);          
         } else{
@@ -77,6 +114,7 @@ export default function Signup() {
         setPassConfrm(value);
         if(pass === value){
           setPassConrmError('no-err');
+          if(pass === ""){setPassConrmError('');}
         } else{
           setPassConrmError('yes-err');
         }
@@ -87,8 +125,8 @@ export default function Signup() {
 
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        loginCredentials()
+        e.preventDefault();
+        loginCredentials();
     }
 
   return (
@@ -98,13 +136,15 @@ export default function Signup() {
           <h1 className='title'>
             Signup for free
           </h1>
-          <input type="text" placeholder='Full Name' />
-          <input type="email" placeholder='Email Address' />
-          <span className="show-clint-err">{email_error}</span>
-          <input type="password" name='password' id="password" onChange={handleChange} placeholder='Password' />
-          <span className="show-clint-err">{pass_error}</span>
-          <input type="password" name='passwordconrm' id="passwordconrm" onChange={handleChange} placeholder='Password Confirmation' />
-          <span className={`show-clint-err ${pass_confrm_error}`}>{pass_confrm_error}</span>
+          <input type="text" placeholder='Full Name' name='fullname' id='fullname' required onChange={handleChange} />
+          <span className={`${fullname_er ? "show-clint-err" : ""}`}>{fullname_er}</span>
+          <input type="email" placeholder='Email Address' name="email" id='email' required onChange={handleChange} />
+          <span className={`${email_error ? "show-clint-err" : ""}`}>{email_error}</span>
+          <input type="password" name='password' id="password" required onChange={handleChange} placeholder='Password' />
+          <span className={`${pass_error ? "show-clint-err" : ""}`}>{pass_error}</span>
+          <input type="password" name='passwordconrm' id="passwordconrm" required onChange={handleChange} placeholder='Password Confirmation' />
+          {/* <span className={`show-clint-err ${pass_confrm_error}`}>{pass_confrm_error}</span> */}
+          <span className={`${pass_confrm_error ? "show-clint-err" : ""}${pass_confrm_error}`}>{pass_confrm_error}</span>
           <button type="submit" className="btn btn-block">Sign up</button>
           <p className="message">
             Already Registered? <Link to="/login">Sign in</Link>
