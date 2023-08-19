@@ -13,6 +13,7 @@ export default function Signup() {
   // const [passwordAlert, setPasswordAlert] = useState(null);
 
   const [pass, setPass] = useState("");
+  const [pass_confrm, setPassConfrm] = useState("");
   const [pass_error, setPassError] = useState("");
   const [email_error, setEmailError] = useState("");
   const [pass_confrm_error, setPassConrmError] = useState("");
@@ -40,6 +41,12 @@ export default function Signup() {
         //const { name, value } = ev.target
         // newData = value;
         setPass(value);
+        if(pass_confrm === value){
+          setPassConrmError('no-err');
+        } else{
+          setPassConrmError('yes-err');
+        }
+
         if (value.length < 7 || value.length > 12) {
           passwordError = 'Password should be 7 to 12 characters'
         }
@@ -67,6 +74,7 @@ export default function Signup() {
 
       if(ev.target.id === 'passwordconrm'){
         // newData = value;
+        setPassConfrm(value);
         if(pass === value){
           setPassConrmError('no-err');
         } else{
