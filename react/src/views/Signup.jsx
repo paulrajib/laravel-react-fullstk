@@ -33,14 +33,14 @@ export default function Signup() {
       var lowerCaseLetters = /[a-z]/g;
       var upperCaseLetters = /[A-Z]/g;
       var numbers = /[0-9]/g;
+      const rgxSpclChrtr = /^(?=.*[-\#\$\.\_\~\%\&\@\!\+\=\\*])/;
+      const rgxSpclChrtr_forname = /^(?=.*[-\#\$\_\~\%\/\&\@\!\+\=\\*])/;
+      const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
       // const atLeastOneSpecialChar = /[#?!@$%^&*-]/g; // any of the special characters within the square brackets
       // const eightCharsOrMore= /.{8,}/g; // eight characters or more
 
 
-      const rgxSpclChrtr = /^(?=.*[-\#\$\.\_\~\%\&\@\!\+\=\\*])/;
-      const rgxSpclChrtr_forname = /^(?=.*[-\#\$\_\~\%\/\&\@\!\+\=\\*])/;
-      const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
       // const newData = Object.assign({}, loginData, { [name]: value })
 
       // let name_err = '';
@@ -154,7 +154,7 @@ export default function Signup() {
             Already Registered? <Link to="/login">Sign in</Link>
           </p>
         </form>
-        
+
       
   )
 }
