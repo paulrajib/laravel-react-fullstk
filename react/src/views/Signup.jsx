@@ -8,7 +8,7 @@ export default function Signup() {
     ev.preventdefault();
   }
 
-  // const [loginData, setLoginData] = useState(null);
+  const [loginData, setLoginData] = useState(null);
   // const [emailAlert, setEmailAlert] = useState(null);
   // const [passwordAlert, setPasswordAlert] = useState(null);
 
@@ -33,6 +33,11 @@ export default function Signup() {
       var lowerCaseLetters = /[a-z]/g;
       var upperCaseLetters = /[A-Z]/g;
       var numbers = /[0-9]/g;
+
+      // const atLeastOneSpecialChar = /[#?!@$%^&*-]/g; // any of the special characters within the square brackets
+      // const eightCharsOrMore= /.{8,}/g; // eight characters or more
+
+
       const rgxSpclChrtr = /^(?=.*[-\#\$\.\_\~\%\&\@\!\+\=\\*])/;
       const rgxSpclChrtr_forname = /^(?=.*[-\#\$\_\~\%\/\&\@\!\+\=\\*])/;
       const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -130,8 +135,7 @@ export default function Signup() {
     }
 
   return (
-      <div className="login-signup-form animated fadeInDown">
-      <div className="form">
+      
         <form action="" onSubmit={onSignupSubmit}>
           <h1 className='title'>
             Signup for free
@@ -145,12 +149,12 @@ export default function Signup() {
           <input type="password" name='passwordconrm' id="passwordconrm" required onChange={handleChange} placeholder='Password Confirmation' />
           {/* <span className={`show-clint-err ${pass_confrm_error}`}>{pass_confrm_error}</span> */}
           <span className={`${pass_confrm_error ? "show-clint-err" : ""}${pass_confrm_error}`}>{pass_confrm_error}</span>
-          <button type="submit" className="btn btn-block">Sign up</button>
+          <button type="submit" className="btn btn-block" onSubmit={handleSubmit}>Sign up</button>
           <p className="message">
             Already Registered? <Link to="/login">Sign in</Link>
           </p>
         </form>
-      </div>
-    </div>
+        
+      
   )
 }
