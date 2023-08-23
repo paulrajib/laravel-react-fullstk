@@ -4,10 +4,26 @@
 export default function BigButton() {}
 
 
+let _obj = {}
+
+export const setGlobal = (obj) => {
+    Object.assign(_obj, obj)
+}
+export const getGlobal = varName => {
+   if(_obj[varName] !== undefined){
+      return _obj[varName]
+   }
+   else {
+      return '';
+   }
+}
+
+
 export var hndlPasswrdInput = (UpperCase, LowerCase, Number, SpclChar, Min, Max, ev) =>{
+// export var hndlPasswrdInput(UpperCase: Boolean, LowerCase: any, Number: any, SpclChar: any, Min: any, Max: any, ev: any) =>{
     const { name, value } = ev.target;
-    console.log(name + ' ' + value);
-    console.log(UpperCase + ' ' + LowerCase + ' ' + Number + ' ' + SpclChar + ' ' + Min + ' ' + Max);
+    // console.log(name + ' ' + value);
+    // console.log(UpperCase + ' ' + LowerCase + ' ' + Number + ' ' + SpclChar + ' ' + Min + ' ' + Max);
 
     var lowerCaseLetters = /[a-z]/g;
     var upperCaseLetters = /[A-Z]/g;
@@ -33,36 +49,26 @@ export var hndlPasswrdInput = (UpperCase, LowerCase, Number, SpclChar, Min, Max,
 
         console.log(passwordError);
 
-        // Set a global Context and get info out on Login page
+        if(value){
+          setGlobal({ passwordError : passwordError });
+        } else{
+          setGlobal({ passwordError : '' });
+        }
+        // console.log('getGlobal: ' + getGlobal("passwordError"));
+        // return passwordError;
 };
 
 
-export var hndlEmailInput = (UpperCase, LowerCase, Min, Max, ev) =>{
+export var hndlEmailInput = (ev) =>{
     const { name, value } = ev.target;
     console.log(name + ' ' + value);
-    console.log(UpperCase + ' ' + LowerCase + ' ' + Min + ' ' + Max);
-    //const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    // const newData = Object.assign({}, loginData, { [name]: value })
-    // return <button>Small</button>;
-    // console.log('hndlPasswrdInput' + ' ' + ev.target.id );
     if(ev.target.id === 'email'){
-      // console.log('its email');
       if(value && !value.match(regexEmail)){
         console.log('Email is not valid');
-        // setEmailError("Email is not valid");
-      // return <span>Email is not valid</span>;
       }else{
-          // setEmailError("");
           console.log('Email is valid');
       }
     }
 };
 
-// function BigButton() {
-//     console.log('BigButton');
-// // return <button style={{padding: '20px 40px'}}>Big</button>;
-// }
-
-// 👇️ named exports
-// export {SmallButton, BigButton};
 
