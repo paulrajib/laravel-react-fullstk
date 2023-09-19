@@ -33,7 +33,7 @@ DB_CONNECTION=sqlite
 DB_DATABASE=/var/www/html/laravel/laravel-react-fullstk/database/database.sqlite
 
 ```
-// this dir name should be correct
+This dir name should be correct
 
 ------------------------------
 
@@ -53,7 +53,7 @@ Then
 ```
 npm run watch
 ```
-// If you get any err like 'sh: 1: mix: not found' then try
+If you get any err like 'sh: 1: mix: not found' then try
 ```
 npm install laravel-mix@latest
 npm clean-install
