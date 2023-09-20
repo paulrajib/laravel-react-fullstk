@@ -14,9 +14,9 @@ export const ContextProvider = ({children}) => {
         name: 'Jhon Doe',
         age: 36
     });
-    const [token, _setToken] = useState(localStorage.getItem('ACCESS_TOKEN'));
+    // const [token, _setToken] = useState(localStorage.getItem('ACCESS_TOKEN'));
     // const [token, _setToken] = useState('45hkkhj');
-    // const [token, _setToken] = useState(null);
+    const [token, _setToken] = useState(null);
 
     const setToken = (token) => {
         _setToken(token);

@@ -19,12 +19,31 @@ export const getGlobal = varName => {
 }
 
 
+export var hndlFullName = (ev) =>{
+  const { name, value } = ev.target;
+  const rgxSpclChrtr_forname = /^(?=.*[-\#\$\_\~\%\/\&\@\!\+\=\\*])/;
+  
+  let fullnameErr = '';
+  if(value.trim().split(/\s+/).length <= 1){
+    fullnameErr = "Doesn't seams like a full name!";          
+  }
+  if(value.trim().split(/\s+/).length > 4 || value.length > 32){
+    fullnameErr = "Is that a name or a sentence!?";          
+  }
+  if(value.match(rgxSpclChrtr_forname)) {  
+    fullnameErr = "Can't contain special character";
+  }
+  if(value){
+    setGlobal({ fullnameErr : fullnameErr });
+  } else{
+    setGlobal({ fullnameErr : '' });
+  }
+
+}
+
 export var hndlPasswrdInput = (UpperCase, LowerCase, Number, SpclChar, Min, Max, ev) =>{
 // export var hndlPasswrdInput(UpperCase: Boolean, LowerCase: any, Number: any, SpclChar: any, Min: any, Max: any, ev: any) =>{
     const { name, value } = ev.target;
-    // console.log(name + ' ' + value);
-    // console.log(UpperCase + ' ' + LowerCase + ' ' + Number + ' ' + SpclChar + ' ' + Min + ' ' + Max);
-
     var lowerCaseLetters = /[a-z]/g;
     var upperCaseLetters = /[A-Z]/g;
     var numbers = /[0-9]/g;
@@ -54,10 +73,33 @@ export var hndlPasswrdInput = (UpperCase, LowerCase, Number, SpclChar, Min, Max,
     } else{
       setGlobal({ passwordError : '' });
     }
-    // console.log('getGlobal: ' + getGlobal("passwordError"));
-    // return passwordError;
+
 };
 
+export var hndlPassConst = (pass, ev) =>{
+  const { name, value } = ev.target;
+  let passConrmError = '';
+  if(value){
+    if(pass === value){
+      passConrmError = 'Passwords matched';
+      if(pass === ""){passConrmError = '';}
+    } else{
+      passConrmError = "Doesn't match";
+    }
+  } else{
+    if(pass){
+      passConrmError = 'Value null';
+    } else{
+      passConrmError = '';
+    } 
+  }
+
+  if(value){
+    setGlobal({ passConrmError : passConrmError });
+  } else{
+    setGlobal({ passConrmError : '' });
+  }
+}
 
 export var hndlEmailInput = (ev) =>{
     const { name, value } = ev.target;
